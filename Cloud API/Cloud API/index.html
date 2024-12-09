@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- Define a viewport para responsividade em diferentes dispositivos -->
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8 -->
+    
+    <link rel="stylesheet" href="/Cloud API/Cloud API/stylescss/style.css">
+    <!-- Link para a folha de estilos principal -->
+    <link rel="stylesheet" href="/Cloud API/Cloud API/backgroud-clouds/style-clouds.css">
+    <!-- Link para a folha de estilos do fundo de nuvens -->
+    <script src="/Cloud API/Cloud API/js/script.js" defer></script>
+    <!-- Link para o arquivo JavaScript; 'defer' garante que o script seja carregado após o DOM ser totalmente analisado. -->
+
+    <link rel="icon" href="/Cloud API/Cloud API/icon-imag/sunny.png">
+    <!-- Define o ícone que será exibido na aba do navegador -->
+
+    <title>AmaRrerInho</title>
+    <!-- Define o título da página -->
+    
+</head>
+<body> 
+    <div id="background-wrap">
+        <!-- Contêiner para o efeito de fundo de nuvens animadas -->
+        <div class="x1">
+            <!-- Nuvem com animação (x1) -->
+            <div class="cloud"></div>
+            <!-- Elemento visual da nuvem -->
+        </div>
+        <!-- As seguintes divs representam nuvens com diferentes animações (velocidade e tamanho) -->
+        <div class="x2"><div class="cloud"></div></div>
+        <div class="x3"><div class="cloud"></div></div>
+        <div class="x4"><div class="cloud"></div></div>
+        <div class="x5"><div class="cloud"></div></div>
+        <div class="x6"><div class="cloud"></div></div>
+        <div class="x7"><div class="cloud"></div></div>
+        <div class="x8"><div class="cloud"></div></div>
+        <div class="x9"><div class="cloud"></div></div>
+        <div class="x10"><div class="cloud"></div></div>
+        <div class="x11"><div class="cloud"></div></div>
+    </div>
+
+    <main>
+        <!-- Seção principal do conteúdo da página -->
+        <div class="button-bar">
+            <!-- Contêiner para a barra de pesquisa -->
+            <div id="search-bar">
+                <!-- Barra de pesquisa -->
+                <a>
+                    <!-- A tag <a> é redundante e pode ser removida -->
+                    <input class="search-bar-input" id="cityInput" type="text" maxlength="100" placeholder="Pesquisar cidade ou local">
+                    <!-- Campo de texto para entrada da cidade -->
+                    <button id="searchButton">Pesquisar</button>
+                    <!-- Botão de pesquisa -->
+                </a>
+            </div>
+        </div>
+        <div id="main-content">
+            <!-- Contêiner para as informações meteorológicas -->
+            <div id="weatherInfo" class="weather-info">
+                <!-- Informações meteorológicas -->
+                <div class="location">
+                    <!-- Informações de localização -->
+                    <h2 id="city"></h2>
+                    <!-- Nome da cidade -->
+                    <span id="country"></span>
+                    <!-- Nome do país -->
+                    <p id="date"></p>
+                    <!-- Data -->
+                </div>
+                <div class="current-weather">
+                    <!-- Condições meteorológicas atuais -->
+                    <img id="weatherIcon" src="/Cloud API/Cloud API/icon-imag/sunny.png" alt="Ícone do Tempo">
+                    <!-- Ícone do tempo -->
+                    <div class="temp">
+                        <!-- Temperatura -->
+                        <span id="tempC"></span>°C | <span id="tempF"></span>°F
+                    </div>
+                    <!-- Detalhes adicionais -->
+                    <div class="data-item"><p><strong>Descrição:</strong> <span id="description"></span></p></div>
+                    <div class="data-item"><p><strong>Umidade:</strong> <span id="humidity"></span></p></div>
+                    <div class="data-item"><p><strong>Vento:</strong> <span id="wind"></span></p></div>
+                    <div class="data-item"><p><strong>Pressão:</strong> <span id="pressure"></span></p></div>
+                    <div class="data-item"><p><strong>UV:</strong> <span id="uv"></span></p></div>
+                    <div class="data-item"><p><strong>Visibilidade:</strong> <span id="visibility"></span></p></div>
+                    <div class="data-item"><p><strong>Precipitação:</strong> <span id="precipitation"></span></p></div>
+                </div>
+            </div>
+        </div>
+        <h2 class="title-next-days">Previsão para os próximos dias</h2>
+        <!-- Título da previsão para os próximos dias -->
+        <div id="forecastDays"></div>
+        <!-- Contêiner para a previsão dos próximos dias -->
+    </main>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+  display: flex; /* Habilita layout flexbox  */
+  justify-content: space-evenly; /* Centraliza horizontalmente os itens filhos. */
+  align-items: center; /* Centraliza verticalmente os itens filhos. */  
+  flex-direction: column; /* Organiza os elementos em uma coluna vertical. */
+  background-color: #f0f0f0; /* Define uma cor de fundo cinza claro. */
+}
+
+/* Estilos para a barra de pesquisa e o conteúdo principal */
+#search-bar, #main-content, #forecastDays {
+  display: flex; /* Usa flexbox para organizar a entrada e o botão. */
+  gap: 10px; /* Adiciona um espaço de 10 pixels entre os itens. */
+  padding: 10px 35px; /* Adiciona preenchimento interno. */
+  margin: 10px auto; /* Centraliza horizontalmente o elemento. `auto` nas margens esquerda e direita faz isso. */
+  justify-content: space-between; /* Distribui espaço igualmente entre os itens. */
+  align-items: center; /* Alinha verticalmente os itens no centro. */
+  border: none; /* Remove a borda padrão. */
+  cursor: pointer; /* Muda o cursor para uma mão ao passar o mouse por cima. */
+  background-color: rgba(82, 194, 242, 0.7); /* Define uma cor de fundo azul claro semi-transparente. */
+  border-radius: 8px; /* Define bordas arredondadas. */
+
+  /* Estilos para o primeiro filho (provavelmente um botão). Esses seletores são redundantes, dados os estilos acima. */
+  &:first-child, &:nth-child(2), &:last-child { 
+    border-radius: 25px; /* Bordas arredondadas - redundante. */
+    animation: firstShow 0.5s ease-in-out, show 0.15s linear forwards; /* Aplica animações. */
+  }
+
+  /* Atrasos específicos de animação para filhos diferentes */
+  &:first-child { 
+    animation-delay: 0.9s; /* Atrasos na animação. */
+  }
+  &:nth-child(2) {
+    animation-delay: 0.6s; /* Atrasos na animação. */
+  }
+
+  /* Efeito hover para a barra de pesquisa */
+  &:hover {
+    transform: translate3d(0, -5px, 0); /* Move ligeiramente para cima ao passar o mouse. */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil ao passar o mouse. */
+  }
+}
+
+/* Estilos para o contêiner da barra de pesquisa */
+.button-bar {
+  display: flex; /* Torna o contêiner um contêiner flex. */
+  justify-content: center; /* Centraliza os itens horizontalmente. */
+  align-items: center; /* Centraliza os itens verticalmente. */
+  padding: 20px; /* Adiciona preenchimento. */
+}
+
+/* Estilos para o campo de entrada da barra de pesquisa */
+.search-bar-input {
+  font-size: 20px; /* Tamanho da Escrita. */
+  flex-grow: 1; /* Expande para ocupar o espaço restante. */
+  padding: 20px;/* Adiciona preenchimento interno. */
+  border: none; /* Remove a borda padrão. */
+  background-color: transparent; /* Remove cor de fundo. */
+}
+
+/* Estilos para o botão de pesquisa */
+#searchButton {
+  padding: 15px 40px; /* Adiciona preenchimento interno. */
+  background-color: #0074f1; /* Cor de fundo azul. */
+  color: white; /* Cor do texto branca. */
+  border: none; /* Remove a borda padrão. */
+  border-radius: 15px; /* Arredonda os cantos. */
+  cursor: pointer; /* Fonte Cursos. */
+}
+
+/* Estilos para a área de conteúdo principal */
+#main-content {
+  display: flex; /* Usa flexbox para layout. */
+  justify-content: center; /* Centraliza horizontalmente. */
+  align-items: center; /* Centraliza verticalmente. */
+  margin: 20px auto; /* Adiciona margem ao redor do conteúdo. */
+  background-color: rgba(82, 194, 242, 0.7); /* Fundo azul claro semi-transparente. */
+  color: #000000; /* Texto preto. */
+  border-radius: 8px; /* Cantos arredondados. */
+  padding: 20px; /* Adiciona preenchimento ao conteúdo. */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil. */
+}
+
+/* Estilos para a seção de informações meteorológicas */
+.weather-info {
+  display: flex; /* Usa flexbox para organizar a localização e o clima atual. */
+  align-items: center; /* Alinha verticalmente os itens. */
+  color: #000000; /* Texto preto. */
+  flex-direction: column; /* Organiza os itens verticalmente. */
+  align-items: center; /* Centraliza os itens horizontalmente. */
+  gap: 10px; /* Separação entre elementos*/
+}
+
+/* Estilos para a seção de localização */
+.location {
+  text-align: center; /* Centraliza o texto na seção de localização. */
+  font-size: 17px; /* Tamanho da Escrita. */
+}
+
+/* Estilos para elementos de localização (h2, span, p) */
+.location h2, .location span, .location p {
+  margin: 5px 0; /* Adiciona margem entre os elementos de localização. */
+}
+
+/* Estilos para a seção do clima atual */
+.current-weather {
+  text-align: center; /* Centraliza o texto na seção do clima atual. */
+}
+
+/* Estilos para o ícone do tempo */
+#weatherIcon {
+  width: 100px; /* Ajuste a largura conforme necessário. */
+  height: 100px; /* Ajuste a altura conforme necessário. */
+  margin: 25px; /* Adiciona margem ao redor do ícone. */
+}
+
+/* Estilos para a seção de temperatura */
+.temp {
+  font-size: 25px; /* Tamanho da fonte maior para a temperatura. */
+  font-weight: bold; /* Negrito. */
+  margin-bottom: 5px; /* Adiciona margem abaixo da temperatura. */
+}
+
+/* Estilos para a descrição do tempo */
+#description {
+  margin-bottom: 10px; /* Adiciona margem abaixo da descrição. */
+  font-size: 16px; /* Tamanho da fonte para a descrição. */
+}
+
+/* Estilos para os títulos de umidade e vento */
+h2 {
+  margin-top: 12px; /* Adiciona margem acima dos títulos. */
+  color: #000000; /* Texto preto. */
+  text-align: center; /* Posiciona texto ao centro */
+}
+
+/* Define o tamanho da fonte para os elementos de umidade, vento e descrição. */
+#humidity, #wind, #description {
+  font-size: 1em; /* 1em é equivalente ao tamanho da fonte padrão do elemento pai. */
+}
+
+/* Estilos para a seção que exibe a previsão do tempo para os próximos dias. */
+#forecastDays {
+  display: flex; /* Usa flexbox para organização de itens. */
+  flex-wrap: wrap; /* Permite que os itens quebrem em uma nova linha se o espaço for insuficiente. */
+  justify-content: center; /* Centraliza os itens horizontalmente dentro do contêiner. */
+  gap: 10px; /* Define um espaçamento de 10 pixels entre os itens de previsão. */
+}
+
+/* Estilos para a previsão de cada dia. */
+.forecast-day { 
+  color: #000000; /* Cor das letras */
+  padding: 10px; /* Adiciona preenchimento interno de 10 pixels. */
+  margin-bottom: 10px; /* Adiciona uma margem inferior de 10 pixels para separar os dias. */
+  min-width: 150px; /* Define a largura mínima de cada dia de previsão para garantir que eles não fiquem muito pequenos. */
+  box-sizing: border-box; /* Garante que o preenchimento e a borda sejam incluídos na largura e altura totais do elemento. */
+  border-radius: 8px; /* Arredonda os cantos do elemento. */
+  text-align: center; /* Centraliza o texto dentro de cada dia de previsão. */
+}
+
+/* Define os keyframes para a animação "firstShow". */
+/* Esta animação parece criar um efeito de profundidade 3D, movendo o elemento para frente e para trás. */
+@keyframes firstShow {
+  0%, 1% { transform: perspective(1000px) translate3d(0, 0, 0em); } /* No início e em 1%, o elemento está em sua posição original (sem transformação). */
+  50% { transform: perspective(1000px) translate3d(0, 0, 3em); } /* No ponto médio da animação, o elemento se move 3em para frente no eixo Z, criando a ilusão de profundidade. */
+}
+
+/* Define os keyframes para a animação "show". */
+/* Esta animação controla a opacidade do elemento, fazendo com que ele apareça gradualmente. */
+@keyframes show {
+  0% { opacity: 0; } /* No início da animação, o elemento é completamente transparente. */
+  100% { opacity: 1; } /* No final da animação, o elemento é completamente opaco (visível). */
+}
